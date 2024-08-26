@@ -34,20 +34,23 @@ function App() {
   if (current_day < 5) {
     current_day = 1
   }
-  
+
   console.log(current_day)
 
   return (
     <>
       <main style={{display: 'flex', width: '85%', margin: 'auto', flexDirection: 'column', marginTop: "30px"}}>
         <div style={{display: 'flex', flexDirection: 'column', marginBottom: "30px"}}>
-          <h1>safka.juhanias.dev</h1>
+          <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
+            <h1>safka.juhanias.dev</h1>
+            <img alt='Github Logo' src="/github-mark-white.png" onClick={() => {window.location.href = "https://github.com/juhanias/safka.juhanias.dev"}} style={{width: "32px", height: "32px"}}></img>
+          </div>
           <p>Juhannuskukkulan ruokalan päivittyvä ruokalista</p>
         </div>
         {foodData && foodData.data && Array.isArray(foodData.data) ? (
-          <div>
+          <div className='day-list'>  
             {foodData.data.map((element, index) => (
-              <ActiveDay 
+              <ActiveDay
                 key={index} 
                 date={element.date} 
                 food={element.food} 
