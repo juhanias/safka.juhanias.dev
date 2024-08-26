@@ -31,7 +31,7 @@ function App() {
 
   let current_day = new Date().getDay();
 
-  if (current_day < 5) {
+  if (current_day > 6) {
     current_day = 1
   }
 
