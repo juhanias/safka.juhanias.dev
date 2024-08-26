@@ -1,0 +1,11 @@
+* {
+  font-family: 'Lexend';
+  color: snow;
+
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #374151;
+}
