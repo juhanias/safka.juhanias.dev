@@ -29,9 +29,17 @@ function App() {
     };
   }, []);
 
+  let current_day = new Date().getDay();
+
+  if (current_day < 5) {
+    current_day = 1
+  }
+  
+  console.log(current_day)
+
   return (
     <>
-      <main style={{display: 'flex', width: '85%', margin: 'auto', flexDirection: 'column', marginTop: "2%"}}>
+      <main style={{display: 'flex', width: '85%', margin: 'auto', flexDirection: 'column', marginTop: "30px"}}>
         <div style={{display: 'flex', flexDirection: 'column', marginBottom: "30px"}}>
           <h1>safka.juhanias.dev</h1>
           <p>Juhannuskukkulan ruokalan päivittyvä ruokalista</p>
@@ -39,11 +47,19 @@ function App() {
         {foodData && foodData.data && Array.isArray(foodData.data) ? (
           <div>
             {foodData.data.map((element, index) => (
-              <ActiveDay key={index} date={element.date} food={element.food} />
+              <ActiveDay 
+                key={index} 
+                date={element.date} 
+                food={element.food} 
+                inactive={current_day - 1 > index}
+                highlighted={current_day - 1 == index}
+              />
             ))}
           </div>
         ) : (
-          <p>Ladataan... :)</p>
+          <p>
+            <ActiveDay date={"Ladataan sisältöä..."} food={[]}/>
+          </p>
         )}
       </main>
     </>
