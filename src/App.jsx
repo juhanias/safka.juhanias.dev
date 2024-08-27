@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ActiveDay } from './Date';
+import { Link } from './Link';
 
 function App() {
   const [foodData, setFoodData] = useState(null); // Initialize with null to handle loading state
@@ -43,7 +44,6 @@ function App() {
         <div style={{display: 'flex', flexDirection: 'column', marginBottom: "30px"}}>
           <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
             <h1>safka.juhanias.dev</h1>
-            <img alt='Github Logo' src="/github-mark-white.png" onClick={() => {window.location.href = "https://github.com/juhanias/safka.juhanias.dev"}} style={{width: "32px", height: "32px"}}></img>
           </div>
           <p>Juhannuskukkulan ruokalan päivittyvä ruokalista</p>
         </div>
@@ -65,6 +65,27 @@ function App() {
           </div>
         )}
       </main>
+      <footer style={{backgroundColor: "rgba(255, 255, 255, 0.2)", marginTop: "20px"}}>
+        <div style={{width: '85%', margin: 'auto', paddingTop: '30px', paddingBottom: '30px'}}>
+          <b>safka.juhanias.dev</b>
+          <Link
+            desc={"Github"}
+            link={"https://github.com/juhanias/safka.juhanias.dev"}
+          />
+          <Link
+            desc={"Julkinen rajapinta"}
+            link={"https://safka-api.juhanias.dev/api/v1"}
+          />
+          <Link
+            desc={"Juhannuskukkulan ruokalista (turkuai.fi)"}
+            link={"https://www.turkuai.fi/turun-ammatti-instituutti/opiskelijalle/ruokailu-ja-ruokalistat/ruokalista-juhannuskukkula-topseli"}
+          />
+          <Link
+            desc={"Alkuperäinen inspiraatio - safka.online"}
+            link={"https://github.com/Tembero11/Safka/tree/main"}
+          />
+        </div>
+      </footer>
     </>
   );
 }
