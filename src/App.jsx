@@ -60,9 +60,9 @@ function App() {
             ))}
           </div>
         ) : (
-          <p>
+          <div>
             <ActiveDay date={"Ladataan sisältöä..."} food={[]}/>
-          </p>
+          </div>
         )}
       </main>
     </>
