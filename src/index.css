@@ -11,5 +11,5 @@
 }
 
 html, body {
-  background-color: #374151;
+  background: linear-gradient(90deg, rgb(66, 24, 24) 0%, #590d1a 100%);
 }
